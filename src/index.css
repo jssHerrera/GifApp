@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .bg-blur {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .masonry-4-col {
+      column-count: 4;
+      gap: 1em;
+    }
+    .masonry-3-col {
+      column-count: 3;
+      gap: 1em;
+    }
+
+    .masonry-2-col {
+      column-count: 2;
+      gap: 1em;
+    }
+    .masonry-1-col {
+      column-count: 1;
+      gap: 1em;
+    }
+
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
