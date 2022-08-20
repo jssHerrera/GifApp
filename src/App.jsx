@@ -6,7 +6,7 @@ import { GifProvider } from "./context/GifProvider";
 const App = () => {
   return (
     <GifProvider>
-      <div className="flex flex-col gap-3 md:flex-row-reverse">
+      <div className="flex flex-col gap-3 md:flex-row-reverse ">
         <Gifphy />
         <Categorias />
       </div>
