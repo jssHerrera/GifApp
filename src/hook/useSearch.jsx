@@ -2,28 +2,19 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 
 const useSearch = () => {
-  const [form, setForm] = useState({
-    texto: "",
-  });
-  const { texto } = form;
+  const [form, setForm] = useState("");
   const [location, setLocation] = useLocation();
 
-  // =====================================
   const handleChange = (e) => {
-    const keyword = e.target.value;
-    localStorage.setItem("lastKeywork", JSON.stringify(keyword));
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm(e.target.value);
   };
 
+  // =====================================
   const handleSubmit = (e) => {
     e.preventDefault();
-    setForm({
-      texto: "",
-    });
-    setLocation(`/search/${texto}`);
+    setForm("");
+    setLocation(`/search/${form}`);
+    localStorage.setItem('lastKeyword', JSON.stringify(form))
   };
 
   return {

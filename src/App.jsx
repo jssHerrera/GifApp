@@ -8,7 +8,7 @@ const App = () => {
     <GifProvider>
       <div className="flex flex-col gap-3 md:flex-row-reverse ">
         <Gifphy />
-        <Categorias />
+        <Categorias/>
       </div>
     </GifProvider>
   );

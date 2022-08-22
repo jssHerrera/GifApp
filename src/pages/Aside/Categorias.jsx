@@ -1,25 +1,19 @@
-import ListCategori from "../../components/categorias/ListCategori";
-import GifTitle from "../../components/title/GifTitle";
-import useTrendingGet from "../../hook/useTrendingGet";
+import React, { Suspense } from "react";
+import useLazyScreen from "../../hook/useLazyScreen";
+import SkeletonLoading from "../../components/loader/SkeletonLoading";
+
+const TrendingSearches = React.lazy(() =>
+  import("../../components/categorias/TrendingSearches")
+);
 
 const Categorias = () => {
-  // const init = ["dragon ball", "Naruto", "morty"];
-  const { categoris } = useTrendingGet();
-  const catRandom = categoris.sort(()=> Math.random() - 0.5)
-  const lista = catRandom.slice(0, 14);
-
+  const { lazy, elemenRef } = useLazyScreen();
   return (
-    <aside
-      className=" md:overflow-y-auto  md:h-screen min-w-min md:w-1/6 bg-gray-100"
-      aria-label="Sidebar"
-    >
-      <div className=" pt-8 px-3 rounded dark:bg-gray-800 ">
-        <GifTitle texto="Gifphy App" />
-        <ul className="flex justify-center flex-wrap sm:flex-row  md:flex-col md:space-y-2">
-          <ListCategori lista={lista}/>
-        </ul>
-      </div>
-    </aside>
+    <div ref={elemenRef} className="flex justify-center">
+      <Suspense fallback={<SkeletonLoading/>}>
+        {lazy ? <TrendingSearches /> : null}
+      </Suspense>
+    </div>
   );
 };
 

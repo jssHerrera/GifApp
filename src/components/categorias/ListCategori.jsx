@@ -16,16 +16,19 @@ const ListCategori = ({ lista }) => {
               text-gray-900
               rounded-lg
               transition
-              duration-300
+              duration-500
               ease-in-out
               capitalize
+              hover:text-white
+              hover:bg-black
               hover:cursor-pointer
-              hover:scale-105 hover:bg-gray-200
-            ">
+              hover:scale-105
+            "
+          >
             <span>
               <SiGiphy />
             </span>
-            <span className="transition ease-in-out duration-300 font-semibold md:whitespace-nowrap md:overflow-ellipsis md:overflow-hidden ">
+            <span className=" md:whitespace-nowrap md:overflow-ellipsis md:overflow-hidden ">
               {elem}
             </span>
           </li>

@@ -1,6 +1,7 @@
+import React from 'react'
 import { Link } from "wouter";
 import "./ListOfGifs.css";
-const ListOfGifs = ({ images }) => {
+const ListOfGifs = React.memo(({ images }) => {
   return (
     <div className="ListOfGifs">
       {images.map(({ id, title, imges }) => (
@@ -13,7 +14,7 @@ const ListOfGifs = ({ images }) => {
       ))}
     </div>
   );
-};
+});
 
 export default ListOfGifs;
 

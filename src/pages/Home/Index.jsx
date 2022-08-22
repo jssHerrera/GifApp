@@ -7,14 +7,17 @@ import useSearch from "../../hook/useSearch";
 const Index = () => {
   const { form, handleChange, handleSubmit } = useSearch();
   const { images } = useGiftGet();
+
   return (
-    <section>
-      <Search
-        form={form}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      <GifTitle texto="Ultimas busquedas"/>
+    <section className="mb-8">
+      <div className="sticky top-0 pt-8 z-30 bg-white">
+        <Search
+          form={form}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+        <GifTitle texto="Ultimas busquedas" />
+      </div>
       <ListOfGifs images={images} />
     </section>
   );
