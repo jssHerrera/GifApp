@@ -5,6 +5,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^2.0.1
   autoprefixer: ^10.4.8
+  just-debounce-it: ^3.1.1
   postcss: ^8.4.16
   react: ^18.2.0
   react-content-loader: ^6.2.0
@@ -15,6 +16,7 @@ specifiers:
   wouter: 2.8.0-alpha.2
 
 dependencies:
+  just-debounce-it: 3.1.1
   react: 18.2.0
   react-content-loader: 6.2.0_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -924,6 +926,10 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
     dev: true
+
+  /just-debounce-it/3.1.1:
+    resolution: {integrity: sha512-oPsuRyWp99LJaQ4KXC3A42tQNqkRTcPy0A8BCkRZ5cPCgsx81upB2KUrmHZvDUNhnCDKe7MshfTuWFQB9iXwDg==}
+    dev: false
 
   /lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}

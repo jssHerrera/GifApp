@@ -1,23 +1,29 @@
 import { useEffect, useState, useRef  } from "react";
 
-const useLazyScreen = ({distace = '100px'}={}) => {
+const useLazyScreen = ({distace = '100px', externalRef, once=true}={}) => {
   const [lazy, setLazy] = useState(false);
   const elemenRef = useRef();
 
   useEffect(() => {
+
+    const elemt = externalRef ? externalRef.current : elemenRef.current
+
     const cambio = (entries, observer) => {
       const elemeto = entries[0];
-      console.log(elemeto.isIntersecting);
+
       if (elemeto.isIntersecting) {
         setLazy(true);
-        observer.disconnect();
+        once && observer.disconnect();
+      }else{
+        !once && setLazy(false)
       }
+
     };
     const observer = new IntersectionObserver(cambio, {
       rootMargin: distace,
     });
-    
-    observer.observe(elemenRef.current);
+
+    if (elemt) observer.observe(elemt);
 
     return () => observer.disconnect();
   }, []);

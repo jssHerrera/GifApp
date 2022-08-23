@@ -13,7 +13,7 @@ const Categorias = () => {
       className=" md:overflow-y-auto pt-8 md:sticky top-0 md:h-screen min-w-min md:w-1/6 "
       aria-label="Sidebar"
     >
-      <div className="  px-3  rounded dark:bg-gray-800 ">
+      <div className="  px-3  rounded ">
         <GifTitle texto="Gifphy App" />
         <ul className="flex justify-center flex-wrap sm:flex-row  md:flex-col md:space-y-2">
           <ListCategori lista={lista} />
